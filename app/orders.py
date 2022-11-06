@@ -8,9 +8,8 @@ orders = Blueprint('orders', __name__)
 @orders.route('/', methods=['GET'])
 def query_orders():
     try:
-        order = Order.get_all_orders()
-
-        return jsonify(order)
+        order_list = Order.get_all()
+        return jsonify(order_list)
     except:
         return jsonify("Error")
 
